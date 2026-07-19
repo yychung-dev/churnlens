@@ -1,0 +1,35 @@
+# 環境變數: DB 連線資訊
+.env
+
+# Data — raw 不進版控(README 附下載指引),processed 要進版控
+data/raw/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Python cache
+__pycache__/
+*.pyc
+*.py[cod]
+*.pyo
+
+# OS / Editor
+.DS_Store
+.vscode/
+
+# 虛擬環境
+venv/
+.venv/
+env/
+
+
+
+# 使用 Windows 系統時, 開啟有圖片資料夾時產生的圖片縮圖快取 (Windows 使用者會產生這個檔案)
+Thumbs.db
+
+# IDE 設定 
+.vscode/
+.idea/
+*.swp
+*.swo
+
