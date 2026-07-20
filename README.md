@@ -28,6 +28,19 @@ churnlens/
 - **Setup**: download `BankChurners.csv` from the link above and place it in `data/raw/`
   (raw data is not committed to this repo)
 
+### Load into PostgreSQL
+
+```bash
+# Start PostgreSQL 16 local container (replace <YOUR_PASSWORD> with your own)
+docker run --name churnlens-pg -e POSTGRES_PASSWORD=<YOUR_PASSWORD> \
+  -e POSTGRES_DB=churnlens -p 5432:5432 -d postgres:16
+# Initialize schemas and tables
+docker exec -i churnlens-pg psql -U postgres -d churnlens < sql/00_ddl.sql
+# Fast-load CSV data via STDIN positional COPY
+docker exec -i churnlens-pg psql -U postgres -d churnlens \
+  -c "\copy raw.bank_churners FROM STDIN CSV HEADER" < data/raw/BankChurners.csv
+```
+
 ## Status
 
 | Module | Description                                    | Status         |
