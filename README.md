@@ -41,6 +41,17 @@ docker exec -i churnlens-pg psql -U postgres -d churnlens \
   -c "\copy raw.bank_churners FROM STDIN CSV HEADER" < data/raw/BankChurners.csv
 ```
 
+### Configure Python connection
+
+Analysis code (`src/db.py` and notebooks) reads `CHURNLENS_DB_URL` from an
+environment variable, loaded via a local `.env` file.
+
+```bash
+# Copy the template and fill in your local values
+cp .env.example .env
+# Then edit .env with the same password used for POSTGRES_PASSWORD above
+```
+
 ## Status
 
 | Module | Description                                    | Status         |
