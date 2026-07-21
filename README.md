@@ -28,12 +28,36 @@ churnlens/
 - **Setup**: download `BankChurners.csv` from the link above and place it in `data/raw/`
   (raw data is not committed to this repo)
 
+### Load into PostgreSQL
+
+```bash
+# Start PostgreSQL 16 local container (replace <YOUR_PASSWORD> with your own)
+docker run --name churnlens-pg -e POSTGRES_PASSWORD=<YOUR_PASSWORD> \
+  -e POSTGRES_DB=churnlens -p 5432:5432 -d postgres:16
+# Initialize schemas and tables
+docker exec -i churnlens-pg psql -U postgres -d churnlens < sql/00_ddl.sql
+# Fast-load CSV data via STDIN positional COPY
+docker exec -i churnlens-pg psql -U postgres -d churnlens \
+  -c "\copy raw.bank_churners FROM STDIN CSV HEADER" < data/raw/BankChurners.csv
+```
+
+### Configure Python connection
+
+Analysis code (`src/db.py` and notebooks) reads `CHURNLENS_DB_URL` from an
+environment variable, loaded via a local `.env` file.
+
+```bash
+# Copy the template and fill in your local values
+cp .env.example .env
+# Then edit .env with the same password used for POSTGRES_PASSWORD above
+```
+
 ## Status
 
 | Module | Description                                    | Status         |
 | ------ | ---------------------------------------------- | -------------- |
-| M0     | Environment setup & data loading               | 🔨 In progress |
-| M1     | Data audit & cleaning                          | ⬜             |
+| M0     | Environment setup & data loading               | ✅             |
+| M1     | Data audit & cleaning                          | 🔨 In progress |
 | M2     | EDA & churn slicing (SQL)                      | ⬜             |
 | M3     | Hypothesis testing                             | ⬜             |
 | M4     | Explainable risk model                         | ⬜             |
