@@ -56,8 +56,8 @@ cp .env.example .env
 
 | Module | Description                                    | Status         |
 | ------ | ---------------------------------------------- | -------------- |
-| M0     | Environment setup & data loading               | 🔨 In progress |
-| M1     | Data audit & cleaning                          | ⬜             |
+| M0     | Environment setup & data loading               | ✅             |
+| M1     | Data audit & cleaning                          | 🔨 In progress |
 | M2     | EDA & churn slicing (SQL)                      | ⬜             |
 | M3     | Hypothesis testing                             | ⬜             |
 | M4     | Explainable risk model                         | ⬜             |
