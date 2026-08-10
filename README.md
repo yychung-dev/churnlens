@@ -28,6 +28,18 @@ churnlens/
 - **Setup**: download `BankChurners.csv` from the link above and place it in `data/raw/`
   (raw data is not committed to this repo)
 
+### Data Architecture
+
+本專案依資料倉儲 (Data Warehouse) 的分層慣例組織資料(原始 → 乾淨 → 針對特定分析用途):
+
+| Layer | Location          | 職責                                                                                                                  |
+| ----- | ----------------- | --------------------------------------------------------------------------------------------------------------------- |
+| Raw   | `raw` schema      | 原始資料原樣載入(全 TEXT)，唯讀，是一切清理的可追溯起點                                                               |
+| Clean | `clean` schema    | 經稽核後清理：型別定案、統一指標口徑(`is_churned`)、移除汙染欄；由 `src/cleaning.py` 產生，寫入資料庫前經三道驗證把關 |
+| Mart  | `data/processed/` | 依特定分析用途(業務需求)整理出的分析資料(客群分群結果、儀表板的資料來源)                                              |
+
+所有分析數字皆可逐層追溯至其原始出處：mart ← clean ← raw ← 原始 CSV。
+
 ### Load into PostgreSQL
 
 ```bash
