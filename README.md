@@ -70,8 +70,8 @@ cp .env.example .env
 | ------ | ---------------------------------------------- | -------------- |
 | M0     | Environment setup & data loading               | ✅             |
 | M1     | Data audit & cleaning                          | ✅             |
-| M2     | EDA & churn slicing (SQL)                      | 🔨 In progress |
-| M3     | Hypothesis testing                             | ⬜             |
+| M2     | EDA & churn slicing (SQL)                      | ✅             |
+| M3     | Hypothesis testing                             | 🔨 In progress |
 | M4     | Explainable risk model                         | ⬜             |
 | M5     | Risk × value segmentation & retention strategy | ⬜             |
 | M6     | A/B test design proposal                       | ⬜             |
