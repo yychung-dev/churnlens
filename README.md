@@ -4,7 +4,7 @@
 
 > 針對一個信用卡客戶組合的流失問題，從原始資料到挽留策略提案的端到端分析: <br/> 1.用 SQL 與統計找出 誰在流失、為什麼流失<br/> 2.用可解釋模型 量化風險<br/> 3.提出一套 可用 A/B 測試驗證、且通過合規檢視的挽留方案。<br/>
 
-🚧 **Work in progress** — target completion: 2026-08-15
+🚧 **Work in progress** — See the Status table below.
 
 ## Project Structure
 
