@@ -285,8 +285,8 @@ SELECT
   SUM((total_trans_amt::numeric = 0 AND total_trans_ct::numeric > 0)::int) AS amt0_but_ct,           -- 有刷卡卻沒刷卡金額：抓「系統漏記刷卡金額」的異常
   SUM((avg_utilization_ratio::numeric > 1)::int)                           AS util_over_1,           -- 平均額度使用率超過 100 %：抓「統計資料錯誤 或 異常超刷」的資料異常
   SUM((customer_age::numeric < 18 OR customer_age::numeric > 100)::int)    AS age_out_of_range,      -- 年齡小於 18 或大於 100：量化「未成年 或 超高齡」資料異常
-  SUM((months_inactive_12_mon::numeric > 12)::int)                         AS inactive_over_12       -- 近 12 個月不活躍月數大於 12：抓「時間不合邏輯」的資料異常
-  SUM((total_revolving_bal::numeric > credit_limit::numeric)::int)         AS revolving_over_limit,  -- 循環欠款本金 大於 信用額度：抓「循環欠款本金超過信用額度」的資料異常 (不符合業務規則)
+  SUM((months_inactive_12_mon::numeric > 12)::int)                         AS inactive_over_12,       -- 近 12 個月不活躍月數大於 12：抓「時間不合邏輯」的資料異常
+  SUM((total_revolving_bal::numeric > credit_limit::numeric)::int)         AS revolving_over_limit  -- 循環欠款本金 大於 信用額度：抓「循環欠款本金超過信用額度」的資料異常 (不符合業務規則)
 FROM raw.bank_churners;
 
 
