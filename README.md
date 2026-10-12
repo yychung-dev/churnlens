@@ -73,8 +73,8 @@ cp .env.example .env
 | M2     | EDA & churn slicing (SQL)                      | ✅             |
 | M3     | Hypothesis testing                             | ✅             |
 | M4     | Explainable risk model                         | ✅             |
-| M5     | Risk × value segmentation & retention strategy | 🔨 In progress |
-| M6     | A/B test design proposal                       | ⬜             |
+| M5     | Risk × value segmentation & retention strategy | ✅             |
+| M6     | A/B test design proposal                       | 🔨 In progress |
 | M7     | Compliance & fairness review                   | ⬜             |
 | M8     | Presentation & narrative                       | ⬜             |
 
