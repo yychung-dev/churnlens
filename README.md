@@ -66,16 +66,16 @@ cp .env.example .env
 
 ## Status
 
-| Module | Description                                    | Status         |
-| ------ | ---------------------------------------------- | -------------- |
-| M0     | Environment setup & data loading               | ✅             |
-| M1     | Data audit & cleaning                          | ✅             |
-| M2     | EDA & churn slicing (SQL)                      | ✅             |
-| M3     | Hypothesis testing                             | ✅             |
-| M4     | Explainable risk model                         | ✅             |
-| M5     | Risk × value segmentation & retention strategy | ✅             |
-| M6     | A/B test design proposal                       | 🔨 In progress |
-| M7     | Compliance & fairness review                   | ⬜             |
-| M8     | Presentation & narrative                       | ⬜             |
+| Module | Description                                                                 | Status         |
+| ------ | --------------------------------------------------------------------------- | -------------- |
+| M0     | Environment setup & data loading                                            | ✅             |
+| M1     | Data audit & cleaning                                                       | ✅             |
+| M2     | EDA & churn slicing (SQL)                                                   | ✅             |
+| M3     | Hypothesis testing                                                          | ✅             |
+| M4     | Explainable risk model                                                      | ✅             |
+| M5     | Risk × value segmentation & retention strategy                              | ✅             |
+| M6     | A/B test design proposal (design only; not executed, no experiment results) | ✅             |
+| M7     | Compliance & fairness review                                                | 🔨 In progress |
+| M8     | Presentation & narrative                                                    | ⬜             |
 
 _(完整 README 將於專案收尾時依交付規格完成:Executive Summary、Key Findings、Retention Strategy、Experiment Design、Compliance、Dashboard 等章節)_
