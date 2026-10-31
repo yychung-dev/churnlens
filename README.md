@@ -75,7 +75,7 @@ cp .env.example .env
 | M4     | Explainable risk model                                                      | ✅             |
 | M5     | Risk × value segmentation & retention strategy                              | ✅             |
 | M6     | A/B test design proposal (design only; not executed, no experiment results) | ✅             |
-| M7     | Compliance & fairness review                                                | 🔨 In progress |
-| M8     | Presentation & narrative                                                    | ⬜             |
+| M7     | Compliance & fairness review                                                | ✅             |
+| M8     | Presentation & narrative                                                    | 🔨 In progress |
 
 _(完整 README 將於專案收尾時依交付規格完成:Executive Summary、Key Findings、Retention Strategy、Experiment Design、Compliance、Dashboard 等章節)_
